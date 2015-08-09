@@ -8,12 +8,11 @@ filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 color molokai 
 let g:molokai_original=1
 set nocompatible            " get rid of Vi compatibility mode.
-set hidden
 set guioptions=aAce
 set gfn=Meslo\ LG\ M\ Regular\ for\ Powerline:h12
 set t_Co=256                " enable 256-color mode.
 set number                  " show line numbers
-set nohlsearch              " Don't continue to highlight searched phrases.
+" set nohlsearch              " Don't continue to highlight searched phrases.
 set incsearch               " But do highlight as you type your search.
 set ignorecase              " Make searches case-insensitive.
 set ruler                   " Always show info along bottom.
@@ -29,6 +28,7 @@ set smarttab                " use tabs at the start of a line, spaces elsewhere
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
+set list on
 
 " Powerline Settings
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
