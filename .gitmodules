@@ -19,3 +19,12 @@
 [submodule "bundle/indent-line"]
 	path = bundle/indent-line
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "bundle/detect-indent"]
+	path = bundle/detect-indent
+	url = https://github.com/vim-scripts/DetectIndent.git
+[submodule "bundle/hex-highlight"]
+	path = bundle/hex-highlight
+	url = https://github.com/vim-scripts/hexHighlight.vim.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
