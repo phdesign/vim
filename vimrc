@@ -41,6 +41,5 @@ command! HexHighlight :call HexHighlight()
 
 " NERDTree
 " autocmd vimenter * NERDTree
-" let g:nerdtree_tabs_open_on_gui_startup=1
 set autochdir
 let NERDTreeChDirMode=1
