@@ -12,10 +12,11 @@ set guioptions=aAce
 set gfn=Meslo\ LG\ M\ Regular\ for\ Powerline:h12
 set t_Co=256                " enable 256-color mode.
 set number                  " show line numbers
-" set nohlsearch              " Don't continue to highlight searched phrases.
-set incsearch               " But do highlight as you type your search.
-set ignorecase              " Make searches case-insensitive.
-set ruler                   " Always show info along bottom.
+"set nohlsearch              " don't continue to highlight searched phrases.
+set incsearch               " but do highlight as you type your search.
+set ignorecase              " make searches case-insensitive.
+set ruler                   " always show info along bottom.
+set fullscreen              " start in fullscreen mode
 
 " Indentation
 set autoindent              " auto-indent
@@ -28,18 +29,24 @@ set smarttab                " use tabs at the start of a line, spaces elsewhere
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
-set list on
+set list
 
 " Powerline Settings
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols='fancy'
 set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h12
 
 " Commands
 command! HexHighlight :call HexHighlight()
 
+" VIM Session
+let g:session_autoload='yes'
+let g:session_autosave='yes'
+let g:session_autosave_periodic=1
+let g:session_autosave_silent=1
+
 " NERDTree
-" autocmd vimenter * NERDTree
-set autochdir
-let NERDTreeChDirMode=1
+"let g:nerdtree_tabs_open_on_gui_startup=0   " disable nerdtree_tabs on startup as it conflicts with vim-session
+let NERDTreeShowHidden=1    " show hidden files a folders in NERDTree
+let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTree
