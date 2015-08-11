@@ -7,7 +7,7 @@ filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 " General
 color Tomorrow-Night
 set nocompatible            " get rid of Vi compatibility mode.
-set guioptions=aAce
+set guioptions=maAce
 set t_Co=256                " enable 256-color mode.
 set number                  " show line numbers
 "set nohlsearch              " don't continue to highlight searched phrases.
@@ -21,7 +21,7 @@ if has('win32')
     set guifont=Powerline\ Consolas:h9
     source $VIMRUNTIME/mswin.vim
     behave mswin
-    set guioptions+=m
+    "set guioptions+=m
 else
     set fullscreen          " start in fullscreen mode
     set gfn=Meslo\ LG\ M\ for\ Powerline:h12
@@ -41,14 +41,15 @@ set smarttab                " use tabs at the start of a line, spaces elsewhere
 set listchars=tab:▸\ ,eol:¬
 set list
 
-" Powerline
-"source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
-"set laststatus=2
-"let g:Powerline_symbols='fancy'
-
 " Airline
 set laststatus=2            " show status bar even with no split
 let g:airline_powerline_fonts=1 " use powerline fonts
+let g:airline#extensions#tabline#enabled=1
+
+function! AirlineInit()
+  let g:airline_section_y = airline#section#create(['ffenc', ' ', '%{strftime("%I:%M%p")}'])
+endfunction
+autocmd VimEnter * call AirlineInit()
 
 " Commands
 command! HexHighlight :call HexHighlight()
