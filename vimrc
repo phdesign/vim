@@ -5,18 +5,28 @@ syntax on
 filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 
 " General
-color Tomorrow-Night 
+color Tomorrow-Night
 set nocompatible            " get rid of Vi compatibility mode.
 set guioptions=aAce
-set gfn=Meslo\ LG\ M\ for\ Powerline:h12
-set guifont=Meslo\ LG\ M\ for\ Powerline:h12
 set t_Co=256                " enable 256-color mode.
 set number                  " show line numbers
 "set nohlsearch              " don't continue to highlight searched phrases.
 set incsearch               " but do highlight as you type your search.
 set ignorecase              " make searches case-insensitive.
 set ruler                   " always show info along bottom.
-set fullscreen              " start in fullscreen mode
+set encoding=utf-8
+if has('win32')
+    au GUIEnter * simalt ~x
+    set gfn=Powerline\ Consolas:h9
+    set guifont=Powerline\ Consolas:h9
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
+    set guioptions+=m
+else
+    set fullscreen          " start in fullscreen mode
+    set gfn=Meslo\ LG\ M\ for\ Powerline:h12
+    set guifont=Meslo\ LG\ M\ for\ Powerline:h12
+endif
 
 " Indentation
 set autoindent              " auto-indent
