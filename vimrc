@@ -1,15 +1,15 @@
-" Pathogen Settings
+" Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 syntax on
 filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 
 " General
-color molokai 
-let g:molokai_original=1
+color Tomorrow-Night 
 set nocompatible            " get rid of Vi compatibility mode.
 set guioptions=aAce
-set gfn=Meslo\ LG\ M\ Regular\ for\ Powerline:h12
+set gfn=Meslo\ LG\ M\ for\ Powerline:h12
+set guifont=Meslo\ LG\ M\ for\ Powerline:h12
 set t_Co=256                " enable 256-color mode.
 set number                  " show line numbers
 "set nohlsearch              " don't continue to highlight searched phrases.
@@ -31,11 +31,14 @@ set smarttab                " use tabs at the start of a line, spaces elsewhere
 set listchars=tab:▸\ ,eol:¬
 set list
 
-" Powerline Settings
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
-set laststatus=2
-let g:Powerline_symbols='fancy'
-set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h12
+" Powerline
+"source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+"set laststatus=2
+"let g:Powerline_symbols='fancy'
+
+" Airline
+set laststatus=2            " show status bar even with no split
+let g:airline_powerline_fonts=1 " use powerline fonts
 
 " Commands
 command! HexHighlight :call HexHighlight()
