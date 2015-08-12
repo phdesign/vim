@@ -46,3 +46,6 @@
 [submodule "fonts/powerline-consolas"]
 	path = fonts/powerline-consolas
 	url = https://github.com/runsisi/consolas-font-for-powerline.git
+[submodule "bundle/vim-airline-tomato"]
+	path = bundle/vim-airline-tomato
+	url = https://github.com/Zuckonit/vim-airline-tomato.git
