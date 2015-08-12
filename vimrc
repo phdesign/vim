@@ -71,4 +71,8 @@ let g:tomato#show_count_down=1
 
 " Ctrl-P
 let g:ctrlp_working_path_mode='ra'           " use the nearest .git directory as the cwd
-let g:ctrlp_cmd='CtrlPMixed'                 " start ctrl-p in mixed mode 
+let g:ctrlp_cmd='CtrlPMixed'                 " start ctrl-p in mixed mode
+
+" Vim Shell
+let g:shell_fullscreen_items='mT'             " options to hide in full screen mode, m: main menu, T: toolbar, e: tab line
+"autocmd VimEnter * call xolox#shell#fullscreen()
