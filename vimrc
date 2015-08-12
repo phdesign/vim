@@ -7,7 +7,7 @@ filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 " General
 color Tomorrow-Night
 set nocompatible            " get rid of Vi compatibility mode.
-set guioptions=maAc
+set guioptions=aAc
 set t_Co=256                " enable 256-color mode.
 set number                  " show line numbers
 "set nohlsearch              " don't continue to highlight searched phrases.
@@ -15,7 +15,8 @@ set incsearch               " but do highlight as you type your search.
 set ignorecase              " make searches case-insensitive.
 set ruler                   " always show info along bottom.
 set encoding=utf-8          " needed for windows compatibility
-set spell spelllang=en_au   " enable spell check
+"set spell spelllang=en_au   " enable spell check
+set autochdir               " change working directory to the active file
 
 if has('win32')
     au GUIEnter * simalt ~x
@@ -66,10 +67,7 @@ let g:session_autosave_silent=1
 "let g:nerdtree_tabs_open_on_gui_startup=0   " disable nerdtree_tabs on startup as it conflicts with vim-session
 let NERDTreeShowHidden=1    " show hidden files a folders in NERDTree
 let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTree
-
-" Airline Tomato (Pomodoro)
-let g:tomato#show_clock=1
-let g:tomato#show_count_down=1
+nmap <leader>ne :NERDTreeToggle<cr>
 
 " Ctrl-P
 let g:ctrlp_working_path_mode='ra'           " use the nearest .git directory as the cwd
