@@ -14,7 +14,9 @@ set number                  " show line numbers
 set incsearch               " but do highlight as you type your search.
 set ignorecase              " make searches case-insensitive.
 set ruler                   " always show info along bottom.
-set encoding=utf-8
+set encoding=utf-8          " needed for windows compatibility
+set spell spelllang=en_au   " enable spell check
+
 if has('win32')
     au GUIEnter * simalt ~x
     set gfn=Powerline\ Consolas:h9
