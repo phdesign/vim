@@ -64,16 +64,17 @@ let g:session_autosave_periodic=1
 let g:session_autosave_silent=1
 
 " NERDTree
-"let g:nerdtree_tabs_open_on_gui_startup=0    " disable nerdtree_tabs on startup as it conflicts with vim-session
+"let g:nerdtree_tabs_open_on_gui_startup=0      " disable nerdtree_tabs on startup as it conflicts with vim-session
 let NERDTreeShowHidden=1    " show hidden files a folders in NERDTree
 let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTree
 nmap <leader>ne :NERDTreeToggle<cr>
 
 " Ctrl-P
-let g:ctrlp_working_path_mode='ra'            " use the nearest .git directory as the cwd
+let g:ctrlp_working_path_mode='ra'              " use the nearest .git directory as the cwd
 let g:ctrlp_cmd='CtrlPMixed'                    " start ctrl-p in mixed mode 
-let g:ctrlp_show_hidden=1                     " let ctrl-p search hidden files (e.g. .gitignore)
+let g:ctrlp_show_hidden=1                       " let ctrl-p search hidden files (e.g. .gitignore)
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|vendor'   " 
 
 " Vim Shell
-let g:shell_fullscreen_items='mT'             " options to hide in full screen mode, m: main menu, T: toolbar, e: tab line
+let g:shell_fullscreen_items='mT'               " options to hide in full screen mode, m: main menu, T: toolbar, e: tab line
 "autocmd VimEnter * call xolox#shell#fullscreen()
