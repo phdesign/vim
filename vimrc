@@ -1,6 +1,7 @@
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+filetype off
 syntax on
 filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 
@@ -31,13 +32,16 @@ else
 endif
 
 " Indentation
-set autoindent              " auto-indent
+"set autoindent              " auto-indent
 set tabstop=4             " tab spacing
-set softtabstop=4         " unify
+"set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
-set shiftround              " always indent/outdent to the nearest tabstop
+"set shiftround              " always indent/outdent to the nearest tabstop
 set expandtab               " use spaces instead of tabs
-set smarttab                " use tabs at the start of a line, spaces elsewhere
+"set smarttab                " use tabs at the start of a line, spaces elsewhere
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+let g:html_indent_inctags="html,body,head,tbody"
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
@@ -48,6 +52,7 @@ set laststatus=2           " show status bar even with no split
 let g:airline_powerline_fonts=1                 " use powerline fonts
 let g:airline#extensions#tabline#enabled=1      " enable the list of buffers
 let g:airline#extensions#tabline#fnamemod=':t'  " just show the filename
+"set guioptions-=e
 
 function! AirlineInit()
   let g:airline_section_y=airline#section#create(['ffenc', ' ', '%{strftime("%I:%M%p")}'])
@@ -66,7 +71,7 @@ let g:session_autosave_silent=1
 " NERDTree
 "let g:nerdtree_tabs_open_on_gui_startup=0      " disable nerdtree_tabs on startup as it conflicts with vim-session
 let NERDTreeShowHidden=1    " show hidden files a folders in NERDTree
-let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTree
+"let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTree
 nmap <leader>ne :NERDTreeToggle<cr>
 
 " Ctrl-P
