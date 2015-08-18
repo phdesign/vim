@@ -47,6 +47,9 @@ let g:html_indent_inctags="html,body,head,tbody"
 set listchars=tab:▸\ ,eol:¬
 set list
 
+" Keymaps
+nmap ,d :b#<bar>bd#<bar>b<CR>
+
 " Airline
 set laststatus=2           " show status bar even with no split
 let g:airline_powerline_fonts=1                 " use powerline fonts
