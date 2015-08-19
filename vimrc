@@ -24,7 +24,7 @@ if has('win32')
     set gfn=Powerline\ Consolas:h9
     set guifont=Powerline\ Consolas:h9
     source $VIMRUNTIME/mswin.vim
-    behave mswin
+    "behave mswin
 else
     set fullscreen          " start in fullscreen mode
     set gfn=Meslo\ LG\ M\ for\ Powerline:h12
@@ -42,6 +42,9 @@ set expandtab               " use spaces instead of tabs
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 let g:html_indent_inctags="html,body,head,tbody"
+
+" Mapping
+vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>  " title case a line or selection (better)
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
