@@ -45,6 +45,7 @@ let g:html_indent_inctags="html,body,head,tbody"
 
 " Mapping
 vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>  " title case a line or selection (better)
+vmap ,s :'<,'>sort u
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
