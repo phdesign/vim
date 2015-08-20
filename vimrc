@@ -11,8 +11,8 @@ set nocompatible            " get rid of Vi compatibility mode.
 set guioptions=aAc
 set t_Co=256              " enable 256-color mode.
 set number                  " show line numbers
-set hlsearch                " highlight searched phrases.
-set incsearch               " but do highlight as you type your search.
+"set hlsearch                " highlight searched phrases.
+set incsearch               " highlight as you type your search.
 set ignorecase              " make searches case-insensitive.
 set ruler                   " always show info along bottom.
 set encoding=utf-8          " needed for windows compatibility
@@ -67,6 +67,7 @@ autocmd VimEnter * call AirlineInit()
 
 " Commands
 command! HexHighlight :call HexHighlight()
+command DeleteBlanks :g/^\s*$/d<cr>
 
 " VIM Session
 let g:session_autoload='yes'
