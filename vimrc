@@ -11,8 +11,8 @@ set nocompatible            " get rid of Vi compatibility mode.
 set guioptions=aAc
 set t_Co=256              " enable 256-color mode.
 set number                  " show line numbers
-set hlsearch                " highlight searched phrases.
-set incsearch               " but do highlight as you type your search.
+"set hlsearch                " highlight searched phrases.
+set incsearch               " highlight as you type your search.
 set ignorecase              " make searches case-insensitive.
 set ruler                   " always show info along bottom.
 set encoding=utf-8          " needed for windows compatibility
@@ -51,6 +51,9 @@ vmap ,s :'<,'>sort u
 set listchars=tab:▸\ ,eol:¬
 set list
 
+" Keymaps
+nmap ,d :b#<bar>bd#<bar>b<CR>
+
 " Airline
 set laststatus=2           " show status bar even with no split
 let g:airline_powerline_fonts=1                 " use powerline fonts
@@ -65,6 +68,7 @@ autocmd VimEnter * call AirlineInit()
 
 " Commands
 command! HexHighlight :call HexHighlight()
+command DeleteBlanks :g/^\s*$/d<cr>
 
 " VIM Session
 let g:session_autoload='yes'
@@ -77,6 +81,7 @@ let g:session_autosave_silent=1
 let NERDTreeShowHidden=1    " show hidden files a folders in NERDTree
 "let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTree
 nmap <leader>ne :NERDTreeToggle<cr>
+let NERDTreeIgnore=['\.swp$', '\~$']
 
 " Ctrl-P
 let g:ctrlp_working_path_mode='ra'              " use the nearest .git directory as the cwd
