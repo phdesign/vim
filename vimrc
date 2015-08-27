@@ -18,6 +18,7 @@ set ruler                   " always show info along bottom.
 set encoding=utf-8          " needed for windows compatibility
 "set spell spelllang=en_au   " enable spell check
 set autochdir               " change working directory to the active file
+set hidden                  " allow switching buffers without saving
 
 if has('win32')
     au GUIEnter * simalt ~x
@@ -46,13 +47,12 @@ let g:html_indent_inctags="html,body,head,tbody"
 " Mapping
 vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>  " title case a line or selection (better)
 vmap ,s :'<,'>sort u
+vmap ,b :g/^\s*$/d<cr>
+nmap ,d :b#<bar>bd#<bar>b<CR>
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
 set list
-
-" Keymaps
-nmap ,d :b#<bar>bd#<bar>b<CR>
 
 " Airline
 set laststatus=2           " show status bar even with no split
