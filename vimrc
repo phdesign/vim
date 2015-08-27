@@ -9,7 +9,7 @@ filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 color Tomorrow-Night
 set nocompatible            " get rid of Vi compatibility mode.
 set guioptions=aAc
-set t_Co=256              " enable 256-color mode.
+set t_Co=256                " enable 256-color mode.
 set number                  " show line numbers
 "set hlsearch                " highlight searched phrases.
 set incsearch               " highlight as you type your search.
@@ -17,7 +17,7 @@ set ignorecase              " make searches case-insensitive.
 set ruler                   " always show info along bottom.
 set encoding=utf-8          " needed for windows compatibility
 "set spell spelllang=en_au   " enable spell check
-set autochdir               " change working directory to the active file
+"set autochdir               " change working directory to the active file
 
 if has('win32')
     au GUIEnter * simalt ~x
@@ -32,13 +32,10 @@ else
 endif
 
 " Indentation
-"set autoindent              " auto-indent
 set tabstop=4             " tab spacing
 "set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
-"set shiftround              " always indent/outdent to the nearest tabstop
 set expandtab               " use spaces instead of tabs
-"set smarttab                " use tabs at the start of a line, spaces elsewhere
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 let g:html_indent_inctags="html,body,head,tbody"
