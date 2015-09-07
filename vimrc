@@ -78,7 +78,7 @@ let g:session_autosave_silent=1
 let NERDTreeShowHidden=1    " show hidden files a folders in NERDTree
 "let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTree
 nmap <leader>ne :NERDTreeToggle<cr>
-let NERDTreeIgnore=['\.swp$', '\~$']
+let NERDTreeIgnore=['\.swp$', '\~$', '\.DS_Store']
 
 " Ctrl-P
 let g:ctrlp_working_path_mode='ra'              " use the nearest .git directory as the cwd
