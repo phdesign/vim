@@ -42,10 +42,13 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 let g:html_indent_inctags="html,body,head,tbody"
 
 " Mapping
-vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>  " title case a line or selection (better)
-vmap ,s :'<,'>sort u
-vmap ,b :g/^\s*$/d<cr>
-nmap ,d :b#<bar>bd#<bar>b<CR>
+vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr> " title case a line or selection (better)
+map ,s :'<,'>sort u<cr>                                 " sort lines
+map ,b :g/^\s*$/d<cr>                                   " delete blank lines
+nmap ,d :b#<bar>bd#<bar>b<cr>                           " close buffer and switch to previous
+nmap ,p :pu *<cr>                                       " paste the system clipboard after this line
+nmap ,P :pu! *<cr>                                      " paste the system clipboard before this line
+ca Ag Ag!                                               " don't automatically open first search result with silver searcher
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
