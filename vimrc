@@ -49,6 +49,11 @@ nmap ,d :b#<bar>bd#<bar>b<cr>                           " close buffer and switc
 nmap ,p :pu *<cr>                                       " paste the system clipboard after this line
 nmap ,P :pu! *<cr>                                      " paste the system clipboard before this line
 ca Ag Ag!                                               " don't automatically open first search result with silver searcher
+if has('win32')
+    " TODO: Windows command
+else
+    nmap ,g :silent !open %:p -a /Applications/Google\ Chrome.app/<cr>  " open in Google Chrome
+endif
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
