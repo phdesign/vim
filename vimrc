@@ -19,6 +19,7 @@ set encoding=utf-8          " needed for windows compatibility
 "set spell spelllang=en_au   " enable spell check
 "set autochdir               " change working directory to the active file
 set hidden                  " allow switching buffers without saving
+set display=lastline        " show long lines
 
 if has('win32')
     au GUIEnter * simalt ~x
@@ -30,6 +31,7 @@ else
     set fullscreen          " start in fullscreen mode
     set gfn=Meslo\ LG\ M\ for\ Powerline:h12
     set guifont=Meslo\ LG\ M\ for\ Powerline:h12
+    set directory=$HOME/.vim/tmp//
 endif
 
 " Indentation
