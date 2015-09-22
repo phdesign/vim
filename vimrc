@@ -27,6 +27,7 @@ if has('win32')
     set guifont=Powerline\ Consolas:h9
     source $VIMRUNTIME/mswin.vim
     "behave mswin
+    set directory=$HOME\\vimfiles\\tmp//
 else
     set fullscreen          " start in fullscreen mode
     set gfn=Meslo\ LG\ M\ for\ Powerline:h12
