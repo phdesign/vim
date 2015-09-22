@@ -50,7 +50,8 @@ map ,b :g/^\s*$/d<cr>                                   " delete blank lines
 nmap ,d :b#<bar>bd#<bar>b<cr>                           " close buffer and switch to previous
 nmap ,p :pu *<cr>                                       " paste the system clipboard after this line
 nmap ,P :pu! *<cr>                                      " paste the system clipboard before this line
-ca Ag Ag!                                               " don't automatically open first search result with silver searcher
+" don't automatically open first search result with silver searcher
+ca Ag Ag!
 if has('win32')
     " TODO: Windows command
 else
