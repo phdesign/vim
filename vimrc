@@ -20,6 +20,9 @@ set encoding=utf-8          " needed for windows compatibility
 "set autochdir               " change working directory to the active file
 set hidden                  " allow switching buffers without saving
 set display=lastline        " show long lines
+set wrap                    " enable wrapping
+set linebreak               " don't slipt words when wrapping
+set nolist                  " no idea what this does, but its required to wrap word wise.
 
 if has('win32')
     au GUIEnter * simalt ~x

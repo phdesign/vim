@@ -1,0 +1,78 @@
+*cheatsheet.txt*        *Cheatsheet* for Vim
+
+Author: Paul Heasley <paul.heasley@gmail.com>
+
+==============================================================================
+CONTENTS
+
+Help                      |cheatsheet-help|
+Moving around             |cheatsheet-moving-around|
+Editing                   |cheatsheet-editing|
+Selection                 |cheatsheet-selection|
+Copy and paste            |cheatsheet-copy-paste|
+Search and replace        |cheatsheet-search-replace|
+Buffers                   |cheatsheet-buffers|
+Tabs                      |cheatsheet-tabs|
+Indentation               |cheatsheet-indentation|
+Syntax                    |cheatsheet-syntax|
+Command line navigation   |cheatsheet-command-line|
+NERDTree                  |cheatsheet-nerdtree|
+Ctrl-P                    |cheatsheet-ctrlp|
+Emmet                     |cheatsheet-emmet|
+Colour schemes            |cheatsheet-colourschemes|
+References                |cheatsheet-references|
+Todo                      |cheatsheet-todo|
+
+==============================================================================
+HELP                                                           *cheatsheet-help*
+
+<c-]>               Follow a link
+<c-t>               Go backwards
+:tab h {pattern}    Open help topic in new tab 
+:Helptags           Update help index
+
+==============================================================================
+MOVING AROUND                                         *cheatsheet-moving-around*
+
+hjkl                Cursor positions 
+0                   Jump to start of line 
+^                   Jump to first non-blank character of line 
+$                   Jump to last character in line 
+N%                  Go to N percentage of file
+gg                  Go to top of file
+G                   Go to bottom of file
+Go                  Start editing from bottom of file 
+w / W               Jump word / using special chars
+e / E               Jump to end of word / using special chars
+b / B               Jump to previous word / using special chars
+ge / gE             Jump to end of previous word / using special chars
+``                  Return to previous cursor position
+<c-e>               Move screen up one line keeping cursor position
+<c-y>               Move screen down one line keeping cursor position
+zz                  Centre screen on cursor position
+
+==============================================================================
+EDITING                                                     *cheatsheet-editing*
+
+ciw                 Change word under cursor
+u                   Undo
+<c-r>               Redo
+<c-v>{motion}$A     Append to multiple lines
+
+==============================================================================
+SELECTION                                                 *cheatsheet-selection*
+
+vit                 Select inner tag content 
+vi}                 Select inside of braces 
+vi"                 Select inside of quotes
+V                   Select visual line mode
+
+==============================================================================
+COPY AND PASTE                                           *cheatsheet-copy-paste*
+
+"*y                 Copy to * buffer & system clipboard
+,p                  Paste system clipboard to line below
+,P                  Paste system clipboard to line above
+
+==============================================================================
+SEARCH AND REPLACE                                   *cheatsheet-search-replace*
