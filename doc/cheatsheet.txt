@@ -30,6 +30,7 @@ HELP                                                           *cheatsheet-help*
 <c-t>               Go backwards
 :tab h {pattern}    Open help topic in new tab 
 :Helptags           Update help index
+:helpg {pattern}    Search for help topics (use `:copen` to list matches)
 
 ==============================================================================
 MOVING AROUND                                         *cheatsheet-moving-around*
@@ -76,3 +77,74 @@ COPY AND PASTE                                           *cheatsheet-copy-paste*
 
 ==============================================================================
 SEARCH AND REPLACE                                   *cheatsheet-search-replace*
+
+*                   Find next instance of indentifer under cursor 
+#                   Find prev instance of identifier under cursor 
+g*                  Like * but also partial matches 
+g#                  Like # but also partial matches 
+gd                  Go to local definition of variable 
+gD                  Go to global definition of variable
+/{pattern}          Searches for pattern 
+n                   Repeats last search 
+:noh                Clear highlights
+>
+    :vimgrep /{pattern}/gj **/*
+<                    Find all instances of pattern in all files in working 
+                    directory 
+
+:Ag! {pattern}      Silver searcher version of above
+:copen              Open the quick fix dialog to view grep results 
+:%s/<c-r>/          Start a substitute, insert last search register 
+g&                  Repeat last substitute 
+\_.                 Period matches across multiple lines 
+\{-}                Non greedy search (e.g. *?) 
+:%s/pattern//gn     Count matches 
+\c                  Make search pattern case insensitive (can appear anywhere 
+                    in search, e.g. /\ccaseinsensitive or /caseinsensitive\c) 
+\C                  Make search pattern case sensitive (if ignorecase on)
+
+==============================================================================
+BUFFERS                                                     *cheatsheet-buffers*
+
+:ls                 List buffers 
+:b N                Switch to buffer number N (use `:ls` to find number) 
+:b {part_filename}  Switches to buffer with name matching. Use tab completion as well 
+:bn                 Switch to next buffer 
+:bf                 Switch to first buffer
+:bl                 Switch to last buffer
+ctrl-p              Will also search buffers 
+:new                New buffer in horizontal window (or :vnew) 
+:enew               New blank buffer (e.g. new file)
+
+==============================================================================
+TABS                                                           *cheatsheet-tabs*
+
+gt                  Next tab 
+gT                  Previous tab 
+:tabc               Close tab 
+:tab new            New tab with a new buffer
+
+==============================================================================
+INDENTATION                                             *cheatsheet-indentation*
+>
+    :set ts=2 sts=2 noet
+    :retab!
+<                    Changes every 2 spaces to a TAB character
+>
+    :set ts=4 sts=4 et
+    :retab
+<                    Changes every TAB to 4 spaces. 
+
+gg=G                Reformat indentation
+
+==============================================================================
+SYNTAX                                                       *cheatsheet-syntax*
+>
+    :echo glob($VIMRUNTIME . '/syntax/*.vim') 
+<                   List all available syntax 
+
+set syntax=cs       Set syntax to C#
+set syntax=text     Set syntax to plain text
+
+==============================================================================
+vim: filetype=help expandtab textwidth=78 tabstop=8 norightleft foldenable foldlevel=0 :
