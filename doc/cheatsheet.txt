@@ -141,10 +141,87 @@ gg=G                Reformat indentation
 SYNTAX                                                       *cheatsheet-syntax*
 >
     :echo glob($VIMRUNTIME . '/syntax/*.vim') 
-<                   List all available syntax 
+<                    List all available syntax 
 
 set syntax=cs       Set syntax to C#
 set syntax=text     Set syntax to plain text
+
+==============================================================================
+COMMAND LINE NAVIGATION                                *cheatsheet-command-line*
+
+<c-r>N              Paste N register
+:h                  cmdline-editing Help 
+<c-b>               To beginning 
+<c-e>               To end 
+<c-w>               Delete word before cursor 
+<c-u>               Delete from cursor to start of line 
+<s-left> / <s-right>    Jump words
+
+==============================================================================
+NERDTREE                                                   *cheatsheet-nerdtree*
+
+m                   Menu to add/edit/delete files 
+:Bookmark           To create bookmark 
+<s-B>               Toggle dislay of bookmarks 
+<s-A>               To maximise / minimise the file tree 
+r                   Refresh current directory 
+<s-R>               Refresh top level directory
+
+==============================================================================
+CTRL-P                                                        *cheatsheet-ctrlp*
+
+<c-x>               Open in a new split
+
+==============================================================================
+EMMET                                                         *cheatsheet-emmet*
+
+<c-y>,              Autocomplete tag
+
+==============================================================================
+EXAMPLES                                                   *cheatsheet-examples*
+>
+    %v/\(^D|jackr|scottb|paul.heasley|anitah\)/-d 
+    %v/\(^D|jackr|scottb|paul.heasley|anitah\)/d
+<                    Phabricator filter commits
+
+==============================================================================
+COLOUR SCHEMES                                        *cheatsheet-colourschemes*
+
+   * codeschool
+   * molokai
+   * railscasts
+   * solarized (set background=dark)
+   * sorcerer
+   * Monokai
+   * hybrid
+   * mustang
+   * bubblegum
+   * lizard
+   * apprentice
+   * pencil
+   * babymate256
+   * Tomorrow-Night
+   * Tomorrow-Night-Eighties
+   * iceberg
+   * atom
+
+==============================================================================
+REFERENCES                                               *cheatsheet-references*
+
+https://github.com/carlhuda/janus 
+https://github.com/ecarter/vim-config 
+http://www.idyllic-software.com/blog/vim-and-moi/ 
+https://github.com/flazz/vim-colorschemes 
+https://github.com/mbadran/headlights 
+https://github.com/Zuckonit/vim-airline-tomato
+
+==============================================================================
+TODO                                                           *cheatsheet-todo*
+
+   * Save new file when closing and restore when opening (Sublime style)
+   * Markdown preview?
+   * Evernote integration?
+   * LESS support
 
 ==============================================================================
 vim: filetype=help expandtab textwidth=78 tabstop=8 norightleft foldenable foldlevel=0 :
