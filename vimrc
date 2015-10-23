@@ -28,11 +28,12 @@ if has('win32')
     au GUIEnter * simalt ~x
     set gfn=Powerline\ Consolas:h9
     set guifont=Powerline\ Consolas:h9
-    source $VIMRUNTIME/mswin.vim
+    "source $VIMRUNTIME/mswin.vim
     "behave mswin
+    set backspace=indent,eol,start          " Make backspace behave like it ought to
     set directory=$HOME\\vimfiles\\tmp//
 else
-    set fullscreen          " start in fullscreen mode
+    set fullscreen                          " start in fullscreen mode
     set gfn=Meslo\ LG\ M\ for\ Powerline:h12
     set guifont=Meslo\ LG\ M\ for\ Powerline:h12
     set directory=$HOME/.vim/tmp//
@@ -42,7 +43,7 @@ endif
 set tabstop=4             " tab spacing
 "set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
-set expandtab               " use spaces instead of tabs
+set expandtab             " use spaces instead of tabs
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 let g:html_indent_inctags="html,body,head,tbody"
