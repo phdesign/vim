@@ -23,6 +23,8 @@ set display=lastline        " show long lines
 set wrap                    " enable wrapping
 set linebreak               " don't slipt words when wrapping
 set nolist                  " no idea what this does, but its required to wrap word wise.
+set synmaxcol=250           " improve performance when displaying super long lines
+set nostartofline           " stop jumping to start of line when switching buffer
 
 if has('win32')
     au GUIEnter * simalt ~x
@@ -92,9 +94,12 @@ let g:session_autosave_silent=1
 " NERDTree
 "let g:nerdtree_tabs_open_on_gui_startup=0      " disable nerdtree_tabs on startup as it conflicts with vim-session
 let NERDTreeShowHidden=1    " show hidden files a folders in NERDTree
-"let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTree
+"let NERDTreeShowBookmarks=1 " show bookmarks table in NERDTreeA
 nmap <leader>ne :NERDTreeToggle<cr>
 let NERDTreeIgnore=['\.swp$', '\~$', '\.DS_Store']
+" Fix issue that NERDTree is always collapsed. Restore size
+"autocmd SessionLoadPost * execute 'normal \<C-W>H\<S-A>\<S-A>'
+autocmd SessionLoadPost * exe 'vert 1resize 31'
 
 " Ctrl-P
 let g:ctrlp_working_path_mode='ra'              " use the nearest .git directory as the cwd

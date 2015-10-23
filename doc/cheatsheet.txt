@@ -19,6 +19,7 @@ Command line navigation   |cheatsheet-command-line|
 NERDTree                  |cheatsheet-nerdtree|
 Ctrl-P                    |cheatsheet-ctrlp|
 Emmet                     |cheatsheet-emmet|
+Examples                  |cheatsheet-examples|
 Colour schemes            |cheatsheet-colourschemes|
 References                |cheatsheet-references|
 Todo                      |cheatsheet-todo|
@@ -59,6 +60,7 @@ ciw                 Change word under cursor
 u                   Undo
 <c-r>               Redo
 <c-v>{motion}$A     Append to multiple lines
+cc                  Start editing from the indent of the line
 
 ==============================================================================
 SELECTION                                                 *cheatsheet-selection*
@@ -67,6 +69,8 @@ vit                 Select inner tag content
 vi}                 Select inside of braces 
 vi"                 Select inside of quotes
 V                   Select visual line mode
+`] ']               To the last character of the previously yanked text
+gv                  Repeat last selection (press ESC to end up at the end)
 
 ==============================================================================
 COPY AND PASTE                                           *cheatsheet-copy-paste*
@@ -74,6 +78,7 @@ COPY AND PASTE                                           *cheatsheet-copy-paste*
 "*y                 Copy to * buffer & system clipboard
 ,p                  Paste system clipboard to line below
 ,P                  Paste system clipboard to line above
+viwp                Replace this word with previously copied text
 
 ==============================================================================
 SEARCH AND REPLACE                                   *cheatsheet-search-replace*
