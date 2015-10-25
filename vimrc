@@ -110,3 +110,8 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|vend
 " Vim Shell
 let g:shell_fullscreen_items='mT'               " options to hide in full screen mode, m: main menu, T: toolbar, e: tab line
 "autocmd VimEnter * call xolox#shell#fullscreen()
+
+" AutoComplPop
+call OnSyntaxChange#Install('Comment', '^Comment$', 0, 'i') 
+autocmd User SyntaxCommentEnterI silent! AcpLock 
+autocmd User SyntaxCommentLeaveI silent! AcpUnlock
