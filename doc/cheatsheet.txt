@@ -71,6 +71,7 @@ vi"                 Select inside of quotes
 V                   Select visual line mode
 `] ']               To the last character of the previously yanked text
 gv                  Repeat last selection (press ESC to end up at the end)
+g<c-g>              Displays a statistics summary of selected text
 
 ==============================================================================
 COPY AND PASTE                                           *cheatsheet-copy-paste*
