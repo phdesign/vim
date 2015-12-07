@@ -30,7 +30,7 @@ if has('win32')
     au GUIEnter * simalt ~x
     set gfn=Powerline\ Consolas:h9
     set guifont=Powerline\ Consolas:h9
-    "source $VIMRUNTIME/mswin.vim
+    source $VIMRUNTIME/mswin.vim
     "behave mswin
     set backspace=indent,eol,start          " Make backspace behave like it ought to
     set directory=$HOME\\vimfiles\\tmp//

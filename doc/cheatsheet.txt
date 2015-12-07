@@ -72,6 +72,7 @@ V                   Select visual line mode
 `] ']               To the last character of the previously yanked text
 gv                  Repeat last selection (press ESC to end up at the end)
 g<c-g>              Displays a statistics summary of selected text
+<c-q>               Windows substitue for Ctrl-V if used for pasting
 
 ==============================================================================
 COPY AND PASTE                                           *cheatsheet-copy-paste*
