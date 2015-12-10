@@ -1,0 +1,1 @@
+OnSyntaxChange-1.01.vmb: call delete('C:\Users\paul.heasley\vimfiles\bundle\OnSyntaxChange\/autoload/ingointegration.vim')|call delete('C:\Users\paul.heasley\vimfiles\bundle\OnSyntaxChange\/autoload/OnSyntaxChange.vim')|call delete('C:\Users\paul.heasley\vimfiles\bundle\OnSyntaxChange\/doc/OnSyntaxChange.txt')
