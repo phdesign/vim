@@ -80,7 +80,7 @@ COPY AND PASTE                                           *cheatsheet-copy-paste*
 "*y                 Copy to * buffer & system clipboard
 ,p                  Paste system clipboard to line below
 ,P                  Paste system clipboard to line above
-viwp                Replace this word with previously copied text
+,r                  Replace this word with previously copied text
 
 ==============================================================================
 SEARCH AND REPLACE                                   *cheatsheet-search-replace*

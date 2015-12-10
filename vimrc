@@ -30,8 +30,41 @@ if has('win32')
     au GUIEnter * simalt ~x
     set gfn=Powerline\ Consolas:h9
     set guifont=Powerline\ Consolas:h9
-    source $VIMRUNTIME/mswin.vim
+    "source $VIMRUNTIME/mswin.vim
     "behave mswin
+
+    " Cut
+    vnoremap <C-X> "+x
+    " Copy
+    vnoremap <C-C> "+y
+    " Paste
+    map <C-V>		"+gP
+    cmap <C-V>		<C-R>+
+    " Pasting blockwise and linewise selections is not possible in Insert and
+    " Visual mode without the +virtualedit feature.  They are pasted as if they
+    " were characterwise instead.
+    " Uses the paste.vim autoload script.
+    " Use CTRL-G u to have CTRL-Z only undo the paste.
+
+    exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
+    exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
+
+    " Use CTRL-Q to do what CTRL-V used to do
+    noremap <C-Q>		<C-V>
+
+    " Use CTRL-S for saving, also in Insert mode
+    noremap <C-S>		:update<CR>
+    vnoremap <C-S>		<C-C>:update<CR>
+    inoremap <C-S>		<C-O>:update<CR>
+
+    " CTRL-Z is Undo; not in cmdline though
+    noremap <C-Z> u
+    inoremap <C-Z> <C-O>u
+
+    " CTRL-Y is Redo (although not repeat); not in cmdline though
+    noremap <C-Y> <C-R>
+    inoremap <C-Y> <C-O><C-R>
+
     set backspace=indent,eol,start          " Make backspace behave like it ought to
     set directory=$HOME\\vimfiles\\tmp//
 else
@@ -51,12 +84,20 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 let g:html_indent_inctags="html,body,head,tbody"
 
 " Mapping
-vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr> " title case a line or selection (better)
-map ,s :'<,'>sort u<cr>                                 " sort lines
-map ,b :g/^\s*$/d<cr>                                   " delete blank lines
-nmap ,d :b#<bar>bd#<bar>b<cr>                           " close buffer and switch to previous
-nmap ,p :pu *<cr>                                       " paste the system clipboard after this line
-nmap ,P :pu! *<cr>                                      " paste the system clipboard before this line
+" title case a line or selection (better)
+vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>
+" sort lines
+map ,s :'<,'>sort u<cr>
+" delete blank lines
+map ,b :g/^\s*$/d<cr>
+" close buffer and switch to previous
+nmap ,d :b#<bar>bd#<bar>b<cr>
+" paste the system clipboard after this line
+nmap ,p :pu *<cr>
+" paste the system clipboard before this line
+nmap ,P :pu! *<cr>
+" Replace the current word with the yanked word
+nmap ,r "_diwP
 " don't automatically open first search result with silver searcher
 ca Ag Ag!
 if has('win32')
