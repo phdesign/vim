@@ -25,6 +25,7 @@ set linebreak               " don't slipt words when wrapping
 set nolist                  " no idea what this does, but its required to wrap word wise.
 set synmaxcol=250           " improve performance when displaying super long lines
 set nostartofline           " stop jumping to start of line when switching buffer
+set colorcolumn=120         " Show a column marker at col 80
 
 if has('win32')
     au GUIEnter * simalt ~x
@@ -50,10 +51,14 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 let g:html_indent_inctags="html,body,head,tbody"
 
+" Commands
+command! HexHighlight :call HexHighlight()
+command -range=% DeleteBlanks <line1>,<line2>g/^\s*$/d
+
 " Mapping
 vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr> " title case a line or selection (better)
 map ,s :'<,'>sort u<cr>                                 " sort lines
-map ,b :g/^\s*$/d<cr>                                   " delete blank lines
+map ,b :DeleteBlanks<cr>                                " delete blank lines
 nmap ,d :b#<bar>bd#<bar>b<cr>                           " close buffer and switch to previous
 nmap ,p :pu *<cr>                                       " paste the system clipboard after this line
 nmap ,P :pu! *<cr>                                      " paste the system clipboard before this line
@@ -80,10 +85,6 @@ function! AirlineInit()
   let g:airline_section_y=airline#section#create(['ffenc', ' ', '%{strftime("%I:%M%p")}'])
 endfunction
 autocmd VimEnter * call AirlineInit()
-
-" Commands
-command! HexHighlight :call HexHighlight()
-command DeleteBlanks :g/^\s*$/d<cr>
 
 " VIM Session
 let g:session_autoload='yes'
