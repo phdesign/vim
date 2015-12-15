@@ -101,8 +101,12 @@ nmap ,d :b#<bar>bd#<bar>b<cr>
 nmap ,p :pu *<cr>
 " paste the system clipboard before this line
 nmap ,P :pu! *<cr>
-" Replace the current word with the yanked word
-nmap ,r "_diwP
+" Replace the word under cursor with " register
+nmap ,rw "_diwP
+" Replace the selection with " register
+vmap ,rv "_diwP
+" Replace word under cursor with system clipboard
+nmap <silent> ,srw "_ciw<c-r>*<esc>
 " don't automatically open first search result with silver searcher
 ca Ag Ag!
 if has('win32')
