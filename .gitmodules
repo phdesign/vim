@@ -76,3 +76,6 @@
 [submodule "bundle/vim-autocomplpop"]
 	path = bundle/vim-autocomplpop
 	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "bundle/vim-ps1.git"]
+	path = bundle/vim-ps1.git
+	url = https://github.com/PProvost/vim-ps1.git
