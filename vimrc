@@ -80,13 +80,14 @@ set tabstop=4             " tab spacing
 "set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
 set expandtab             " use spaces instead of tabs
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal sts=2 ts=2 sw=2
+autocmd FileType javascript setlocal sts=2 ts=2 sw=2
 let g:html_indent_inctags="html,body,head,tbody"
 
 " Commands
 command! HexHighlight :call HexHighlight()
 command -range=% DeleteBlanks <line1>,<line2>g/^\s*$/d
+command -range=% DeleteTrailingSpaces <line1>,<line2>s/\s\+$
 
 " Mapping
 " title case a line or selection (better)
