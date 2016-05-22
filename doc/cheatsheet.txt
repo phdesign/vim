@@ -107,7 +107,8 @@ n                   Repeats last search
 g&                  Repeat last substitute 
 \_.                 Period matches across multiple lines 
 \{-}                Non greedy search (e.g. *?) 
-:%s/pattern//gn     Count matches 
+:%s/pattern//gn     Count matches
+:%s/a/b/gc          Replace a with b throught document but prompt on each match
 \c                  Make search pattern case insensitive (can appear anywhere 
                     in search, e.g. /\ccaseinsensitive or /caseinsensitive\c) 
 \C                  Make search pattern case sensitive (if ignorecase on)
@@ -200,9 +201,12 @@ v                   Switch to visual mode, then any visual command (i, I, a, A)
 ==============================================================================
 EXAMPLES                                                   *cheatsheet-examples*
 >
-    %v/\(^D|jackr|scottb|paul.heasley|anitah\)/-d 
+    %s/\nAuthor:/ Author:/g
     %v/\(^D|jackr|scottb|paul.heasley|anitah\)/d
 <                    Phabricator filter commits
+>
+:'<,'>s/^/\=(line('.') - 6).'. '
+<                    Insert line numbers at start of line for selection
 
 ==============================================================================
 COLOUR SCHEMES                                        *cheatsheet-colourschemes*

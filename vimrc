@@ -77,11 +77,12 @@ endif
 
 " Indentation
 set tabstop=4             " tab spacing
-"set softtabstop=4         " unify
+set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
 set expandtab             " use spaces instead of tabs
 autocmd FileType html setlocal sts=2 ts=2 sw=2
 autocmd FileType javascript setlocal sts=2 ts=2 sw=2
+autocmd FileType less setlocal sts=2 ts=2 sw=2
 let g:html_indent_inctags="html,body,head,tbody"
 
 " Commands
@@ -102,8 +103,12 @@ nmap ,d :b#<bar>bd#<bar>b<cr>
 nmap ,p :pu *<cr>
 " paste the system clipboard before this line
 nmap ,P :pu! *<cr>
-" Replace the current word with the yanked word
-nmap ,r "_diwP
+" Replace the word under cursor with " register
+nmap ,rw "_diwP
+" Replace the selection with " register
+vmap ,rv "_diwP
+" Replace word under cursor with system clipboard
+nmap <silent> ,srw "_ciw<c-r>*<esc>
 " don't automatically open first search result with silver searcher
 ca Ag Ag!
 if has('win32')
