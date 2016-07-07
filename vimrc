@@ -95,7 +95,7 @@ vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>
 " sort lines
 map ,s :'<,'>sort u<cr>
 " delete blank lines
-map ,b :DeleteBlanks<cr>
+map ,db :DeleteBlanks<cr>
 " close buffer and switch to previous
 nmap ,d :b#<bar>bd#<bar>b<cr>
 " paste the system clipboard after this line
@@ -108,7 +108,10 @@ nmap ,rw "_diwP
 vmap ,rv "_diwP
 " Replace word under cursor with system clipboard
 nmap <silent> ,srw "_ciw<c-r>*<esc>
+" Close all buffers but this
+nmap ,bo :BufOnly<cr>
 " don't automatically open first search result with silver searcher
+ca ag Ag!
 ca Ag Ag!
 if has('win32')
     " TODO: Windows command

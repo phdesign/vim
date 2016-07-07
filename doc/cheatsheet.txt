@@ -175,6 +175,7 @@ m                   Menu to add/edit/delete files
 <s-A>               To maximise / minimise the file tree 
 r                   Refresh current directory 
 <s-R>               Refresh top level directory
+:NERDTreeFind       Locate the current file in the nerd tree view
 
 ==============================================================================
 CTRL-P                                                        *cheatsheet-ctrlp*
