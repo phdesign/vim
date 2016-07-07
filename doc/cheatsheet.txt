@@ -62,6 +62,7 @@ u                   Undo
 <c-r>               Redo
 <c-v>{motion}$A     Append to multiple lines
 cc                  Start editing from the indent of the line
+:w ++enc=utf-8      Save file with UTF-8 encoding
 
 ==============================================================================
 SELECTION                                                 *cheatsheet-selection*
@@ -124,6 +125,7 @@ BUFFERS                                                     *cheatsheet-buffers*
 ctrl-p              Will also search buffers 
 :new                New buffer in horizontal window (or :vnew) 
 :enew               New blank buffer (e.g. new file)
+<c-w><c-r>          Rotate column or row of split windows
 
 ==============================================================================
 TABS                                                           *cheatsheet-tabs*
