@@ -3,6 +3,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 filetype off
 syntax on
+set autoindent
 filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 
 " General
