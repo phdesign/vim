@@ -90,6 +90,7 @@ let g:html_indent_inctags="html,body,head,tbody"
 command! HexHighlight :call HexHighlight()
 command -range=% DeleteBlanks <line1>,<line2>g/^\s*$/d
 command -range=% DeleteTrailingSpaces <line1>,<line2>s/\s\+$
+command -range=% DeleteDuplicateLines <line1>,<line2>sort|<line1>,<line2>g/^\(.*\)\n\1$/d
 
 " Mapping
 " title case a line or selection (better)
@@ -177,3 +178,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
