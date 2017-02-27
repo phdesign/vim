@@ -74,6 +74,12 @@ else
     set gfn=Meslo\ LG\ M\ for\ Powerline:h12
     set guifont=Meslo\ LG\ M\ for\ Powerline:h12
     set directory=$HOME/.vim/tmp//
+
+    " Stop annoying shift arrow mistakes
+    nmap <S-Up> V
+    nmap <S-Down> V
+    vmap <S-Up> k
+    vmap <S-Down> j
 endif
 
 " Indentation
@@ -113,6 +119,8 @@ vmap ,rv "_diwP
 nmap <silent> ,srw "_ciw<c-r>*<esc>
 " Close all buffers but this
 nmap ,bo :BufOnly<cr>
+" Reset indentation to 2 spaces
+nnoremap ,i2 :setlocal sts=2 ts=2 sw=2 et<cr>:IndentLinesReset<cr>
 " don't automatically open first search result with silver searcher
 ca ag Ag!
 ca Ag Ag!

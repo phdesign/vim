@@ -20,6 +20,8 @@ NERDTree                  |cheatsheet-nerdtree|
 Ctrl-P                    |cheatsheet-ctrlp|
 Emmet                     |cheatsheet-emmet|
 Multiple Cursors          |cheatsheet-multiple-cursors|
+Using marks               |cheatsheet-marks|
+Batch commands            |cheatsheet-batch|
 Examples                  |cheatsheet-examples|
 Colour schemes            |cheatsheet-colourschemes|
 References                |cheatsheet-references|
@@ -227,6 +229,15 @@ Special marks
 ``                  Jump back (to position in current buffer where jumped from)
 `[ or `]            Jump to beginning/end of previously changed or yanked text
 `< or `>            Jump to beginning/end of last visual selection
+
+==============================================================================
+BATCH COMMANDS                                                *cheatsheet-batch*
+
+:args %:p:h/*       Set the list of files to be changed as every file in the 
+                    folder of the currently open file
+>
+    :argdo execute "normal! @q" | w
+<                   For every file in args, run the 'q' macro
 
 ==============================================================================
 EXAMPLES                                                   *cheatsheet-examples*
