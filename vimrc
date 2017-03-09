@@ -146,6 +146,9 @@ function! AirlineInit()
 endfunction
 autocmd VimEnter * call AirlineInit()
 
+" vim-json
+let g:vim_json_syntax_conceal = 0
+
 " VIM Session
 let g:session_autoload='yes'
 let g:session_autosave='yes'
