@@ -70,7 +70,9 @@ if has('win32')
     set backspace=indent,eol,start          " Make backspace behave like it ought to
     set directory=$HOME\\vimfiles\\tmp//
 else
-    set fullscreen                          " start in fullscreen mode
+    if has("gui_running")
+        set fullscreen                          " start in fullscreen mode
+    endif
     set gfn=Meslo\ LG\ M\ for\ Powerline:h12
     set guifont=Meslo\ LG\ M\ for\ Powerline:h12
     set directory=$HOME/.vim/tmp//
@@ -148,6 +150,7 @@ autocmd VimEnter * call AirlineInit()
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+" set conceallevel=0
 
 " VIM Session
 let g:session_autoload='yes'
