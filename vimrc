@@ -1,6 +1,7 @@
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+execute pathogen#helptags()
 filetype off
 syntax on
 set autoindent
