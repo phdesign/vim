@@ -27,7 +27,7 @@ set linebreak               " don't slipt words when wrapping
 set nolist                  " no idea what this does, but its required to wrap word wise.
 set synmaxcol=250           " improve performance when displaying super long lines
 set nostartofline           " stop jumping to start of line when switching buffer
-set colorcolumn=120         " Show a column marker at col 80
+set colorcolumn=120         " show a column marker at col 80
 
 if has('win32')
     au GUIEnter * simalt ~x
@@ -102,35 +102,38 @@ command -range=% DeleteTrailingSpaces <line1>,<line2>s/\s\+$
 command -range=% DeleteDuplicateLines <line1>,<line2>sort|<line1>,<line2>g/^\(.*\)\n\1$/d
 
 " Mapping
+let mapleader = ","
 " title case a line or selection (better)
-vmap ,t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>
+vmap <leader>t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>
 " sort lines
-map ,s :'<,'>sort u<cr>
+map <leader>s :'<,'>sort u<cr>
 " delete blank lines
-map ,db :DeleteBlanks<cr>
+map <leader>db :DeleteBlanks<cr>
 " close buffer and switch to previous
-nmap ,d :b#<bar>bd#<bar>b<cr>
+nmap <leader>d :b#<bar>bd#<bar>b<cr>
 " paste the system clipboard after this line
-nmap ,p :pu *<cr>
+nmap <leader>p :pu *<cr>
 " paste the system clipboard before this line
-nmap ,P :pu! *<cr>
+nmap <leader>P :pu! *<cr>
 " Replace the word under cursor with " register
-nmap ,rw "_diwP
+nmap <leader>rw "_diwP
 " Replace the selection with " register
-vmap ,rv "_diwP
+vmap <leader>rv "_diwP
 " Replace word under cursor with system clipboard
-nmap <silent> ,srw "_ciw<c-r>*<esc>
+nmap <silent> <leader>srw "_ciw<c-r>*<esc>
 " Close all buffers but this
-nmap ,bo :BufOnly<cr>
+nmap <leader>bo :BufOnly<cr>
 " Reset indentation to 2 spaces
-nnoremap ,i2 :setlocal sts=2 ts=2 sw=2 et<cr>:IndentLinesReset<cr>
+nnoremap <leader>i2 :setlocal sts=2 ts=2 sw=2 et<cr>:IndentLinesReset<cr>
+" Insert new GUID at current position (relies on `npm install -g node-uuid`)
+nnoremap <leader>uu a<CR><ESC>:.-1read !uuid<CR>I<BS><ESC>j0i<BS><ESC>l
 " don't automatically open first search result with silver searcher
 ca ag Ag!
 ca Ag Ag!
 if has('win32')
     " TODO: Windows command
 else
-    nmap ,g :silent !open %:p -a /Applications/Google\ Chrome.app/<cr>  " open in Google Chrome
+    nmap <leader>g :silent !open %:p -a /Applications/Google\ Chrome.app/<cr>  " open in Google Chrome
 endif
 
 " Invisibles
