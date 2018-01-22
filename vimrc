@@ -77,6 +77,8 @@ else
     set gfn=Meslo\ LG\ M\ for\ Powerline:h12
     set guifont=Meslo\ LG\ M\ for\ Powerline:h12
     set directory=$HOME/.vim/tmp//
+    set ttymouse=xterm2
+    set mouse=a
 
     " Stop annoying shift arrow mistakes
     nmap <S-Up> V
