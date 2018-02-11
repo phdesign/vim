@@ -70,6 +70,7 @@ if has('win32')
 
     set backspace=indent,eol,start          " Make backspace behave like it ought to
     set directory=$HOME\\vimfiles\\tmp//
+    set backupcopy=yes                      " Necessary to allow file watchers (e.g. webpack) to work
 else
     if has("gui_running")
         set fullscreen                          " start in fullscreen mode
