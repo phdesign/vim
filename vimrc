@@ -31,8 +31,8 @@ set colorcolumn=120         " show a column marker at col 80
 
 if has('win32')
     au GUIEnter * simalt ~x
-    set gfn=Powerline\ Consolas:h9
-    set guifont=Powerline\ Consolas:h9
+    set gfn=Powerline\ Consolas:h10
+    set guifont=Powerline\ Consolas:h10
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
 
@@ -70,6 +70,7 @@ if has('win32')
 
     set backspace=indent,eol,start          " Make backspace behave like it ought to
     set directory=$HOME\\vimfiles\\tmp//
+    set backupcopy=yes                      " Necessary to allow file watchers (e.g. webpack) to work
 else
     if has("gui_running")
         set fullscreen                          " start in fullscreen mode
