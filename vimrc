@@ -95,6 +95,7 @@ set expandtab             " use spaces instead of tabs
 autocmd FileType html setlocal sts=2 ts=2 sw=2
 autocmd FileType javascript setlocal sts=2 ts=2 sw=2
 autocmd FileType less setlocal sts=2 ts=2 sw=2
+autocmd FileType * setlocal formatoptions-=cro        " Disable auto insert comment after 'o' or 'O'
 let g:html_indent_inctags="html,body,head,tbody"
 
 " Commands
