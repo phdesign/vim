@@ -5,30 +5,30 @@ Author: Paul Heasley <paul.heasley@gmail.com>
 ==============================================================================
 CONTENTS
 
-Help                      |cheatsheet-help|
-Moving around             |cheatsheet-moving-around|
-Editing                   |cheatsheet-editing|
-Selection                 |cheatsheet-selection|
-Copy and paste            |cheatsheet-copy-paste|
-Search and replace        |cheatsheet-search-replace|
-Buffers                   |cheatsheet-buffers|
-Tabs                      |cheatsheet-tabs|
-Indentation               |cheatsheet-indentation|
-Syntax                    |cheatsheet-syntax|
-Command line navigation   |cheatsheet-command-line|
-NERDTree                  |cheatsheet-nerdtree|
-Ctrl-P                    |cheatsheet-ctrlp|
-Emmet                     |cheatsheet-emmet|
-Multiple Cursors          |cheatsheet-multiple-cursors|
-Using marks               |cheatsheet-marks|
-Batch commands            |cheatsheet-batch|
-Examples                  |cheatsheet-examples|
-Colour schemes            |cheatsheet-colourschemes|
-References                |cheatsheet-references|
-Todo                      |cheatsheet-todo|
+Help                      |cheatsheet_help|
+Moving around             |cheatsheet_moving-around|
+Editing                   |cheatsheet_editing|
+Selection                 |cheatsheet_selection|
+Copy and paste            |cheatsheet_copy-paste|
+Search and replace        |cheatsheet_search-replace|
+Buffers                   |cheatsheet_buffers|
+Tabs                      |cheatsheet_tabs|
+Indentation               |cheatsheet_indentation|
+Syntax                    |cheatsheet_syntax|
+Command line navigation   |cheatsheet_command-line|
+NERDTree                  |cheatsheet_nerdtree|
+Ctrl-P                    |cheatsheet_ctrlp|
+Emmet                     |cheatsheet_emmet|
+Multiple Cursors          |cheatsheet_multiple-cursors|
+Using marks               |cheatsheet_marks|
+Batch commands            |cheatsheet_batch|
+Examples                  |cheatsheet_examples|
+Colour schemes            |cheatsheet_colourschemes|
+References                |cheatsheet_references|
+Todo                      |cheatsheet_todo|
 
 ==============================================================================
-HELP                                                           *cheatsheet-help*
+HELP                                                           *cheatsheet_help*
 
 <c-]>               Follow a link
 <c-t>               Go backwards
@@ -37,7 +37,7 @@ HELP                                                           *cheatsheet-help*
 :helpg {pattern}    Search for help topics (use `:copen` to list matches)
 
 ==============================================================================
-MOVING AROUND                                         *cheatsheet-moving-around*
+MOVING AROUND                                         *cheatsheet_moving_around*
 
 hjkl                Cursor positions 
 0                   Jump to start of line 
@@ -57,7 +57,7 @@ ge / gE             Jump to end of previous word / using special chars
 zz                  Centre screen on cursor position
 
 ==============================================================================
-EDITING                                                     *cheatsheet-editing*
+EDITING                                                     *cheatsheet_editing*
 
 ciw                 Change word under cursor
 u                   Undo
@@ -67,7 +67,7 @@ cc                  Start editing from the indent of the line
 :w ++enc=utf-8      Save file with UTF-8 encoding
 
 ==============================================================================
-SELECTION                                                 *cheatsheet-selection*
+SELECTION                                                 *cheatsheet_selection*
 
 vit                 Select inner tag content 
 vi}                 Select inside of braces 
@@ -79,7 +79,7 @@ g<c-g>              Displays a statistics summary of selected text
 <c-q>               Windows substitue for Ctrl-V if used for pasting
 
 ==============================================================================
-COPY AND PASTE                                           *cheatsheet-copy-paste*
+COPY AND PASTE                                           *cheatsheet_copy_paste*
 
 "*y                 Copy to * buffer & system clipboard
 ,p                  Paste system clipboard to line below
@@ -87,7 +87,7 @@ COPY AND PASTE                                           *cheatsheet-copy-paste*
 ,r                  Replace this word with previously copied text
 
 ==============================================================================
-SEARCH AND REPLACE                                   *cheatsheet-search-replace*
+SEARCH AND REPLACE                                   *cheatsheet_search_replace*
 
 *                   Find next instance of indentifer under cursor 
 #                   Find prev instance of identifier under cursor 
@@ -116,7 +116,7 @@ g&                  Repeat last substitute
 \C                  Make search pattern case sensitive (if ignorecase on)
 
 ==============================================================================
-BUFFERS                                                     *cheatsheet-buffers*
+BUFFERS                                                     *cheatsheet_buffers*
 
 :ls                 List buffers 
 :b N                Switch to buffer number N (use `:ls` to find number) 
@@ -130,7 +130,7 @@ ctrl-p              Will also search buffers
 <c-w><c-r>          Rotate column or row of split windows
 
 ==============================================================================
-TABS                                                           *cheatsheet-tabs*
+TABS                                                           *cheatsheet_tabs*
 
 gt                  Next tab 
 gT                  Previous tab 
@@ -138,7 +138,7 @@ gT                  Previous tab
 :tab new            New tab with a new buffer
 
 ==============================================================================
-INDENTATION                                             *cheatsheet-indentation*
+INDENTATION                                             *cheatsheet_indentation*
 >
     :set ts=2 sts=2 noet
     :retab!
@@ -151,7 +151,7 @@ INDENTATION                                             *cheatsheet-indentation*
 gg=G                Reformat indentation
 
 ==============================================================================
-SYNTAX                                                       *cheatsheet-syntax*
+SYNTAX                                                       *cheatsheet_syntax*
 >
     :echo glob($VIMRUNTIME . '/syntax/*.vim') 
 <                    List all available syntax 
@@ -160,7 +160,7 @@ set syntax=cs       Set syntax to C#
 set syntax=text     Set syntax to plain text
 
 ==============================================================================
-COMMAND LINE NAVIGATION                                *cheatsheet-command-line*
+COMMAND LINE NAVIGATION                                *cheatsheet_command_line*
 
 <c-r>N              Paste N register
 :h                  cmdline-editing Help 
@@ -171,7 +171,7 @@ COMMAND LINE NAVIGATION                                *cheatsheet-command-line*
 <s-left> / <s-right>    Jump words
 
 ==============================================================================
-NERDTREE                                                   *cheatsheet-nerdtree*
+NERDTREE                                                   *cheatsheet_nerdtree*
 
 m                   Menu to add/edit/delete files 
 :Bookmark           To create bookmark 
@@ -182,17 +182,17 @@ r                   Refresh current directory
 :NERDTreeFind       Locate the current file in the nerd tree view
 
 ==============================================================================
-CTRL-P                                                        *cheatsheet-ctrlp*
+CTRL-P                                                        *cheatsheet_ctrlp*
 
 <c-x>               Open in a new split
 
 ==============================================================================
-EMMET                                                         *cheatsheet-emmet*
+EMMET                                                         *cheatsheet_emmet*
 
 <c-y>,              Autocomplete tag
 
 ==============================================================================
-MULTIPLE CURSORS                                   *cheatsheet-multiple-cursors*
+MULTIPLE CURSORS                                   *cheatsheet_multiple_cursors*
 
 <c-n>               Select next instance of word under cusor, then...
 c                   Change all instances of word
@@ -202,7 +202,7 @@ v                   Switch to visual mode, then any visual command (i, I, a, A)
 <c-x>               Skip this instance
 
 ==============================================================================
-USING MARKS                                                   *cheatsheet-marks*
+USING MARKS                                                   *cheatsheet_marks*
 
 ma                  Set mark a at current cursor location
 'a                  Jump to line of mark a (first non-blank character in line)
@@ -231,7 +231,7 @@ Special marks
 `< or `>            Jump to beginning/end of last visual selection
 
 ==============================================================================
-BATCH COMMANDS                                                *cheatsheet-batch*
+BATCH COMMANDS                                                *cheatsheet_batch*
 
 :args %:p:h/*       Set the list of files to be changed as every file in the 
                     folder of the currently open file
@@ -240,7 +240,7 @@ BATCH COMMANDS                                                *cheatsheet-batch*
 <                   For every file in args, run the 'q' macro
 
 ==============================================================================
-EXAMPLES                                                   *cheatsheet-examples*
+EXAMPLES                                                   *cheatsheet_examples*
 >
     %s/\nAuthor:/ Author:/g
     %v/\(^D|jackr|scottb|paul.heasley|anitah\)/d
@@ -249,8 +249,12 @@ EXAMPLES                                                   *cheatsheet-examples*
 :'<,'>s/^/\=(line('.') - 6).'. '
 <                    Insert line numbers at start of line for selection
 
+>
+    let i=1 | g/on step\d*()/s//\="on step".i."()"/ | let i=i+1
+<                    Find and replace with incremental numbers
+
 ==============================================================================
-COLOUR SCHEMES                                        *cheatsheet-colourschemes*
+COLOUR SCHEMES                                        *cheatsheet_colourschemes*
 
    * codeschool
    * molokai
@@ -271,7 +275,7 @@ COLOUR SCHEMES                                        *cheatsheet-colourschemes*
    * atom
 
 ==============================================================================
-REFERENCES                                               *cheatsheet-references*
+REFERENCES                                               *cheatsheet_references*
 
 https://github.com/carlhuda/janus 
 https://github.com/ecarter/vim-config 
@@ -281,7 +285,7 @@ https://github.com/mbadran/headlights
 https://github.com/Zuckonit/vim-airline-tomato
 
 ==============================================================================
-TODO                                                           *cheatsheet-todo*
+TODO                                                           *cheatsheet_todo*
 
    * Save new file when closing and restore when opening (Sublime style)
    * Markdown preview?
