@@ -129,6 +129,8 @@ nmap <silent> <leader>srw "_ciw<c-r>*<esc>
 nmap <leader>bo :BufOnly<cr>
 " Reset indentation to 2 spaces
 nnoremap <leader>i2 :setlocal sts=2 ts=2 sw=2 et<cr>:IndentLinesReset<cr>
+" Reset indentation to 4 spaces
+nnoremap <leader>i4 :setlocal sts=4 ts=4 sw=4 et<cr>:IndentLinesReset<cr>
 " Insert new GUID at current position (relies on `npm install -g node-uuid`)
 nnoremap <leader>uu a<CR><ESC>:.-1read !uuid<CR>I<BS><ESC>j0i<BS><ESC>l
 " don't automatically open first search result with silver searcher
