@@ -75,8 +75,8 @@ else
     if has("gui_running")
         set fullscreen                          " start in fullscreen mode
     endif
-    set gfn=Meslo\ LG\ M\ for\ Powerline:h12
-    set guifont=Meslo\ LG\ M\ for\ Powerline:h12
+    set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
     set directory=$HOME/.vim/tmp//
     set ttymouse=xterm2
     set mouse=a
