@@ -68,6 +68,9 @@ if has('win32')
     noremap <C-Y> <C-R>
     inoremap <C-Y> <C-O><C-R>
 
+    " SHIFT-ALT-L like ReShaper show in file list 
+    nmap <A-L> :NERDTreeFind<cr>
+
     set backspace=indent,eol,start          " Make backspace behave like it ought to
     set directory=$HOME\\vimfiles\\tmp//
     set backupcopy=yes                      " Necessary to allow file watchers (e.g. webpack) to work
@@ -75,8 +78,8 @@ else
     if has("gui_running")
         set fullscreen                          " start in fullscreen mode
     endif
-    set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h14
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+    set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h13
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h13
     set directory=$HOME/.vim/tmp//
     set ttymouse=xterm2
     set mouse=a
@@ -86,6 +89,9 @@ else
     nmap <S-Down> V
     vmap <S-Up> k
     vmap <S-Down> j
+
+    " SHIFT-ALT-L like ReShaper show in file list 
+    nmap Ò :NERDTreeFind<cr>
 endif
 
 " Indentation
