@@ -253,6 +253,12 @@ EXAMPLES                                                   *cheatsheet_examples*
     let i=1 | g/on step\d*()/s//\="on step".i."()"/ | let i=i+1
 <                    Find and replace with incremental numbers
 
+>
+    :let i=1 | g/end step\d*/s//\="end step".i/ | let i=i+1
+    :let i=1 | g/on step\d*()/s//\="on step".i."()"/ | let i=i+1
+<                    Reorder steps / increment numbers
+
+
 ==============================================================================
 COLOUR SCHEMES                                        *cheatsheet_colourschemes*
 
