@@ -6,20 +6,20 @@ Author: Paul Heasley <paul.heasley@gmail.com>
 CONTENTS
 
 Help                      |cheatsheet_help|
-Moving around             |cheatsheet_moving-around|
+Moving around             |cheatsheet_moving_around|
 Editing                   |cheatsheet_editing|
 Selection                 |cheatsheet_selection|
-Copy and paste            |cheatsheet_copy-paste|
-Search and replace        |cheatsheet_search-replace|
+Copy and paste            |cheatsheet_copy_paste|
+Search and replace        |cheatsheet_search_replace|
 Buffers                   |cheatsheet_buffers|
 Tabs                      |cheatsheet_tabs|
 Indentation               |cheatsheet_indentation|
 Syntax                    |cheatsheet_syntax|
-Command line navigation   |cheatsheet_command-line|
+Command line navigation   |cheatsheet_command_line|
 NERDTree                  |cheatsheet_nerdtree|
 Ctrl-P                    |cheatsheet_ctrlp|
 Emmet                     |cheatsheet_emmet|
-Multiple Cursors          |cheatsheet_multiple-cursors|
+Multiple Cursors          |cheatsheet_multiple_cursors|
 Using marks               |cheatsheet_marks|
 Batch commands            |cheatsheet_batch|
 Examples                  |cheatsheet_examples|
@@ -252,12 +252,6 @@ EXAMPLES                                                   *cheatsheet_examples*
 >
     let i=1 | g/on step\d*()/s//\="on step".i."()"/ | let i=i+1
 <                    Find and replace with incremental numbers
-
->
-    :let i=1 | g/end step\d*/s//\="end step".i/ | let i=i+1
-    :let i=1 | g/on step\d*()/s//\="on step".i."()"/ | let i=i+1
-<                    Reorder steps / increment numbers
-
 
 ==============================================================================
 COLOUR SCHEMES                                        *cheatsheet_colourschemes*

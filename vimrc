@@ -8,7 +8,7 @@ set autoindent
 filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
 
 " General
-color Tomorrow-Night
+color Tomorrow-Night-Eighties
 set nocompatible            " get rid of Vi compatibility mode.
 set guioptions=aAc
 set t_Co=256                " enable 256-color mode.
@@ -30,11 +30,16 @@ set nostartofline           " stop jumping to start of line when switching buffe
 set colorcolumn=120         " show a column marker at col 80
 
 if has('win32')
-    au GUIEnter * simalt ~x
+    "au GUIEnter * simalt ~x                " Start Gvim maximized
+    set lines=60 columns=150
     set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h9
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
+
+    " Disable 'ding' when pressing ESC
+    set noerrorbells visualbell t_vb=
+    autocmd GUIEnter * set visualbell t_vb=
 
     " Cut
     vnoremap <C-X> "+x
@@ -74,6 +79,7 @@ if has('win32')
     set backspace=indent,eol,start          " Make backspace behave like it ought to
     set directory=$HOME\\vimfiles\\tmp//
     set backupcopy=yes                      " Necessary to allow file watchers (e.g. webpack) to work
+    "set shellslash                          " Make file name completion use forward slash
 else
     if has("gui_running")
         set fullscreen                          " start in fullscreen mode
@@ -169,7 +175,7 @@ let g:vim_json_syntax_conceal = 0
 " set conceallevel=0
 
 " VIM Session
-let g:session_autoload='yes'
+let g:session_autoload='no'
 let g:session_autosave='yes'
 let g:session_autosave_periodic=1
 let g:session_autosave_silent=1
