@@ -253,6 +253,10 @@ EXAMPLES                                                   *cheatsheet_examples*
     let i=1 | g/on step\d*()/s//\="on step".i."()"/ | let i=i+1
 <                    Find and replace with incremental numbers
 
+>
+    for i in range(0,17) | put ='['.i.':v:0] ['.i.':a:0]' | endfor
+<                    Generate a list of incremental numbers
+
 ==============================================================================
 COLOUR SCHEMES                                        *cheatsheet_colourschemes*
 
