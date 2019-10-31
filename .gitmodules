@@ -112,3 +112,6 @@
 [submodule "bundle/vim-applescript"]
 	path = bundle/vim-applescript
 	url = https://github.com/dearrrfish/vim-applescript.git
+[submodule "bundle/vim-pug"]
+	path = bundle/vim-pug
+	url = git@github.com:digitaltoad/vim-pug.git

@@ -81,7 +81,7 @@ if has('win32')
     set backupcopy=yes                      " Necessary to allow file watchers (e.g. webpack) to work
     "set shellslash                          " Make file name completion use forward slash
 else
-    if has("gui_running")
+    if has("gui_running") && argc() == 0
         set fullscreen                          " start in fullscreen mode
     endif
     set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h13
