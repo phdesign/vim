@@ -216,3 +216,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+
+" Allow project level configuration
+set exrc
+" Prevent :autocmd, shell and write commands
+set secure
