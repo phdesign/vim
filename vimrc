@@ -32,8 +32,8 @@ set colorcolumn=120         " show a column marker at col 80
 if has('win32')
     "au GUIEnter * simalt ~x                " Start Gvim maximized
     set lines=60 columns=150
-    set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h9
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+    set gfn=Fira\ Code:h10:qCLEARTYPE
+    set guifont=Fira\ Code:h10:qCLEARTYPE
     "source $VIMRUNTIME/mswin.vim
     "behave mswin
 
