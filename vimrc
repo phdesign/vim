@@ -80,6 +80,12 @@ if has('win32')
     set directory=$HOME\\vimfiles\\tmp//
     set backupcopy=yes                      " Necessary to allow file watchers (e.g. webpack) to work
     "set shellslash                          " Make file name completion use forward slash
+
+    " Commands
+    function! Quit_on_term_exit(a, b)
+        normal q!
+    endfunction
+    command! Bash :below call term_start('C:\tools\msys64\msys2_shell.cmd -defterm -no-start -full-path -here', { 'exit_cb': 'Quit_on_term_exit', 'term_name': 'bash', 'norestore': 1 })
 else
     if has("gui_running") && argc() == 0
         set fullscreen                          " start in fullscreen mode
