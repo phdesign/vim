@@ -232,8 +232,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 
-" Blamer.nvim
-let g:blamer_enabled = 1
+" Blamer.nvim - doesn't work well with normal vim
+if has('nvim')
+    let g:blamer_enabled = 1
+endif
 
 " Allow project level configuration
 set exrc
