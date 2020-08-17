@@ -28,6 +28,12 @@ set nolist                  " no idea what this does, but its required to wrap w
 set synmaxcol=250           " improve performance when displaying super long lines
 set nostartofline           " stop jumping to start of line when switching buffer
 set colorcolumn=120         " show a column marker at col 80
+" highlight the current line but only in active window
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 if has('win32')
     "au GUIEnter * simalt ~x                " Start Gvim maximized
@@ -87,13 +93,15 @@ if has('win32')
     endfunction
     command! Bash :below call term_start('C:\tools\msys64\msys2_shell.cmd -defterm -no-start -full-path -here', { 'exit_cb': 'Quit_on_term_exit', 'term_name': 'bash', 'norestore': 1 })
 else
-    if has("gui_running") && argc() == 0
-        set fullscreen                          " start in fullscreen mode
-    endif
-    set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h13
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h13
+    "if has("gui_running") && argc() == 0
+        "set fullscreen                          " start in fullscreen mode
+    "endif
+    set gfn=Fira\ Code:h14
+    set guifont=Fira\ Code:h14
     set directory=$HOME/.vim/tmp//
-    set ttymouse=xterm2
+    if !has('nvim')
+        set ttymouse=xterm2
+    endif
     set mouse=a
 
     " Stop annoying shift arrow mistakes
@@ -223,6 +231,9 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+
+" Blamer.nvim
+let g:blamer_enabled = 1
 
 " Allow project level configuration
 set exrc
