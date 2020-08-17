@@ -118,3 +118,6 @@
 [submodule "bundle/blamer.nvim"]
 	path = bundle/blamer.nvim
 	url = https://github.com/APZelos/blamer.nvim.git
+[submodule "bundle/vim-gutentags"]
+	path = bundle/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
