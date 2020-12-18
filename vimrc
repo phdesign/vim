@@ -10,6 +10,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -45,6 +46,7 @@ augroup END
 if !has('win32')
     set gfn=Fira\ Code\ Light:h14
     set guifont=Fira\ Code\ Light:h14
+    set guioptions=
     set directory=$HOME/.vim/tmp/
     set mouse=a
 
@@ -126,6 +128,7 @@ let g:ctrlp_show_hidden=1                       " let ctrl-p search hidden files
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|vendor'   " 
 
 " Conquer of Completion (coc)
+let g:coc_node_path = '/Users/paul/.nvm/versions/node/v14.8.0/bin/node'
 let g:coc_global_extensions = [
     \ 'coc-go',
     \ 'coc-highlight',
