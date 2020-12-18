@@ -1,33 +1,40 @@
-" Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-execute pathogen#helptags()
-filetype off
-syntax on
-set autoindent
-filetype plugin indent on   " filetype detection[ON] plugin[ON] indent[ON]
+call plug#begin('~/.vim/plugged')
+
+Plug 'airblade/vim-gitgutter'
+Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
+Plug 'djoshea/vim-autoread'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'kien/ctrlp.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'vim-scripts/OnSyntaxChange'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+Plug 'Yggdroot/indentLine'
+
+call plug#end()
 
 " General
 color Tomorrow-Night-Eighties
-set nocompatible            " get rid of Vi compatibility mode.
-set guioptions=aAc
-set t_Co=256                " enable 256-color mode.
 set number                  " show line numbers
-"set hlsearch                " highlight searched phrases.
-set incsearch               " highlight as you type your search.
+set nohlsearch              " disable highlight searched phrases.
 set ignorecase              " make searches case-insensitive.
-set ruler                   " always show info along bottom.
-set encoding=utf-8          " needed for windows compatibility
 "set spell spelllang=en_au   " enable spell check
 "set autochdir               " change working directory to the active file
 set hidden                  " allow switching buffers without saving
-set display=lastline        " show long lines
-set wrap                    " enable wrapping
-set linebreak               " don't slipt words when wrapping
-set nolist                  " no idea what this does, but its required to wrap word wise.
+"set wrap                    " enable wrapping
+set linebreak               " don't split words when wrapping
 set synmaxcol=250           " improve performance when displaying super long lines
 set nostartofline           " stop jumping to start of line when switching buffer
-set colorcolumn=120         " show a column marker at col 80
+set colorcolumn=120         " show a column marker
+
 " highlight the current line but only in active window
 augroup CursorLine
   au!
@@ -35,73 +42,10 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-if has('win32')
-    "au GUIEnter * simalt ~x                " Start Gvim maximized
-    set lines=60 columns=150
-    set gfn=Fira\ Code:h10:qCLEARTYPE
-    set guifont=Fira\ Code:h10:qCLEARTYPE
-    "source $VIMRUNTIME/mswin.vim
-    "behave mswin
-
-    " Disable 'ding' when pressing ESC
-    set noerrorbells visualbell t_vb=
-    autocmd GUIEnter * set visualbell t_vb=
-
-    " Cut
-    vnoremap <C-X> "+x
-    " Copy
-    vnoremap <C-C> "+y
-    " Paste
-    map <C-V>		"+gP
-    cmap <C-V>		<C-R>+
-    " Pasting blockwise and linewise selections is not possible in Insert and
-    " Visual mode without the +virtualedit feature.  They are pasted as if they
-    " were characterwise instead.
-    " Uses the paste.vim autoload script.
-    " Use CTRL-G u to have CTRL-Z only undo the paste.
-
-    exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
-    exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
-
-    " Use CTRL-Q to do what CTRL-V used to do
-    noremap <C-Q>		<C-V>
-
-    " Use CTRL-S for saving, also in Insert mode
-    noremap <C-S>		:update<CR>
-    vnoremap <C-S>		<C-C>:update<CR>
-    inoremap <C-S>		<C-O>:update<CR>
-
-    " CTRL-Z is Undo; not in cmdline though
-    noremap <C-Z> u
-    inoremap <C-Z> <C-O>u
-
-    " CTRL-Y is Redo (although not repeat); not in cmdline though
-    noremap <C-Y> <C-R>
-    inoremap <C-Y> <C-O><C-R>
-
-    " SHIFT-ALT-L like ReShaper show in file list 
-    nmap <A-L> :NERDTreeFind<cr>
-
-    set backspace=indent,eol,start          " Make backspace behave like it ought to
-    set directory=$HOME\\vimfiles\\tmp//
-    set backupcopy=yes                      " Necessary to allow file watchers (e.g. webpack) to work
-    "set shellslash                          " Make file name completion use forward slash
-
-    " Commands
-    function! Quit_on_term_exit(a, b)
-        normal q!
-    endfunction
-    command! Bash :below call term_start('C:\tools\msys64\msys2_shell.cmd -defterm -no-start -full-path -here', { 'exit_cb': 'Quit_on_term_exit', 'term_name': 'bash', 'norestore': 1 })
-else
-    "if has("gui_running") && argc() == 0
-        "set fullscreen                          " start in fullscreen mode
-    "endif
-    set gfn=Fira\ Code:h14
-    set guifont=Fira\ Code:h14
-    set directory=$HOME/.vim/tmp//
-    if !has('nvim')
-        set ttymouse=xterm2
-    endif
+if !has('win32')
+    set gfn=Fira\ Code\ Light:h14
+    set guifont=Fira\ Code\ Light:h14
+    set directory=$HOME/.vim/tmp/
     set mouse=a
 
     " Stop annoying shift arrow mistakes
@@ -119,14 +63,10 @@ set tabstop=4             " tab spacing
 set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
 set expandtab             " use spaces instead of tabs
-autocmd FileType html setlocal sts=2 ts=2 sw=2
-autocmd FileType javascript setlocal sts=2 ts=2 sw=2
-autocmd FileType less setlocal sts=2 ts=2 sw=2
+autocmd FileType go setlocal sts=4 ts=4 sw=4 noet nowrap
 autocmd FileType * setlocal formatoptions-=cro        " Disable auto insert comment after 'o' or 'O'
-let g:html_indent_inctags="html,body,head,tbody"
 
 " Commands
-command! HexHighlight :call HexHighlight()
 command -range=% DeleteBlanks <line1>,<line2>g/^\s*$/d
 command -range=% DeleteTrailingSpaces <line1>,<line2>s/\s\+$
 command -range=% DeleteDuplicateLines <line1>,<line2>sort|<line1>,<line2>g/^\(.*\)\n\1$/d
@@ -136,57 +76,33 @@ let mapleader = ","
 " title case a line or selection (better)
 vmap <leader>t :s/\%V\<\(\w\)\(\w*\)\>/\u\1\L\2/ge<bar>noh<cr>
 " sort lines
-map <leader>s :'<,'>sort u<cr>
-" delete blank lines
-map <leader>db :DeleteBlanks<cr>
+map <leader>s :'<,'>sort i<cr>
 " close buffer and switch to previous
 nmap <leader>d :b#<bar>bd#<bar>b<cr>
-" paste the system clipboard after this line
-nmap <leader>p :pu *<cr>
-" paste the system clipboard before this line
-nmap <leader>P :pu! *<cr>
-" Replace the word under cursor with " register
-nmap <leader>rw "_diwP
-" Replace the selection with " register
-vmap <leader>rv "_diwP
-" Replace word under cursor with system clipboard
-nmap <silent> <leader>srw "_ciw<c-r>*<esc>
 " Close all buffers but this
 nmap <leader>bo :BufOnly<cr>
 " Reset indentation to 2 spaces
-nnoremap <leader>i2 :setlocal sts=2 ts=2 sw=2 et<cr>:IndentLinesReset<cr>
+nmap <leader>i2 :setlocal sts=2 ts=2 sw=2 et<cr>:IndentLinesReset<cr>
 " Reset indentation to 4 spaces
-nnoremap <leader>i4 :setlocal sts=4 ts=4 sw=4 et<cr>:IndentLinesReset<cr>
-" Insert new GUID at current position (relies on `npm install -g node-uuid`)
-nnoremap <leader>uu a<CR><ESC>:.-1read !uuid<CR>I<BS><ESC>j0i<BS><ESC>l
-" don't automatically open first search result with silver searcher
-ca ag Ag!
-ca Ag Ag!
-if has('win32')
-    " TODO: Windows command
-else
-    nmap <leader>g :silent !open %:p -a /Applications/Google\ Chrome.app/<cr>  " open in Google Chrome
-endif
+nmap <leader>i4 :setlocal sts=4 ts=4 sw=4 et<cr>:IndentLinesReset<cr>
 
 " Invisibles
 set listchars=tab:▸\ ,eol:¬
 set list
 
 " Airline
+let g:airline_theme='tomorrow'
 set laststatus=2           " show status bar even with no split
 let g:airline_powerline_fonts=1                 " use powerline fonts
 let g:airline#extensions#tabline#enabled=1      " enable the list of buffers
 let g:airline#extensions#tabline#fnamemod=':t'  " just show the filename
-"set guioptions-=e
+let g:airline#extensions#gutentags#enabled=1    " enable gutentags
+let g:airline#extensions#nerdtree_status=0      " disable airline on NERDTree
 
 function! AirlineInit()
   let g:airline_section_y=airline#section#create(['ffenc', ' ', '%{strftime("%I:%M%p")}'])
 endfunction
 autocmd VimEnter * call AirlineInit()
-
-" vim-json
-let g:vim_json_syntax_conceal = 0
-" set conceallevel=0
 
 " VIM Session
 let g:session_autoload='no'
@@ -201,7 +117,6 @@ let NERDTreeShowHidden=1    " show hidden files a folders in NERDTree
 nmap <leader>ne :NERDTreeToggle<cr>
 let NERDTreeIgnore=['\.swp$', '\~$', '\.DS_Store']
 " Fix issue that NERDTree is always collapsed. Restore size
-"autocmd SessionLoadPost * execute 'normal \<C-W>H\<S-A>\<S-A>'
 autocmd SessionLoadPost * exe 'vert 1resize 31'
 
 " Ctrl-P
@@ -210,102 +125,16 @@ let g:ctrlp_cmd='CtrlPMixed'                    " start ctrl-p in mixed mode
 let g:ctrlp_show_hidden=1                       " let ctrl-p search hidden files (e.g. .gitignore)
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|vendor'   " 
 
-" Vim Shell
-let g:shell_fullscreen_items='mT'               " options to hide in full screen mode, m: main menu, T: toolbar, e: tab line
-"autocmd VimEnter * call xolox#shell#fullscreen()
-
-" AutoComplPop
-call OnSyntaxChange#Install('Comment', '^Comment$', 0, 'i') 
-autocmd User SyntaxCommentEnterI silent! AcpLock 
-autocmd User SyntaxCommentLeaveI silent! AcpUnlock
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_python_python_exec = '/usr/local/bin/python3'
-
-" Blamer.nvim - doesn't work well with normal vim
-if has('nvim')
-    let g:blamer_enabled = 1
-endif
-
-" Gutentags
-" (thanks https://www.reddit.com/r/vim/comments/d77t6j/guide_how_to_setup_ctags_with_gutentags_properly/)
-let g:gutentags_ctags_executable = 'es-ctags'
-let g:gutentags_add_default_project_roots = 0
-let g:gutentags_project_root = ['package.json', '.git']
-
-let g:gutentags_cache_dir = expand('~/.vim/tmp/ctags/')
-
-command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')
-
-let g:gutentags_generate_on_new = 1
-let g:gutentags_generate_on_missing = 1
-let g:gutentags_generate_on_write = 1
-let g:gutentags_generate_on_empty_buffer = 0
-
-let g:gutentags_ctags_extra_args = [
-      \ '--tag-relative=yes',
-      \ '--fields=+ailmnS',
-      \ ]
-
-let g:gutentags_ctags_exclude = [
-      \ '*.git', '*.svg', '*.hg',
-      \ '*/tests/*',
-      \ 'build',
-      \ 'dist',
-      \ '*sites/*/files/*',
-      \ 'bin',
-      \ 'node_modules',
-      \ 'bower_components',
-      \ 'cache',
-      \ 'compiled',
-      \ 'docs',
-      \ 'example',
-      \ 'bundle',
-      \ 'vendor',
-      \ '*.md',
-      \ '*-lock.json',
-      \ '*.lock',
-      \ '*bundle*.js',
-      \ '*build*.js',
-      \ '.*rc*',
-      \ '*.json',
-      \ '*.min.*',
-      \ '*.map',
-      \ '*.bak',
-      \ '*.zip',
-      \ '*.pyc',
-      \ '*.class',
-      \ '*.sln',
-      \ '*.Master',
-      \ '*.csproj',
-      \ '*.tmp',
-      \ '*.csproj.user',
-      \ '*.cache',
-      \ '*.pdb',
-      \ 'tags*',
-      \ 'cscope.*',
-      \ '*.css',
-      \ '*.less',
-      \ '*.scss',
-      \ '*.exe', '*.dll',
-      \ '*.mp3', '*.ogg', '*.flac',
-      \ '*.swp', '*.swo',
-      \ '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png',
-      \ '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
-      \ '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx',
-      \ ]
+" Conquer of Completion (coc)
+let g:coc_global_extensions = [
+    \ 'coc-go',
+    \ 'coc-highlight',
+    \ 'coc-snippets',
+    \ 'coc-ultisnips',
+\ ]
 
 " Allow project level configuration
 set exrc
 " Prevent :autocmd, shell and write commands
 set secure
+
